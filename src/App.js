@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import TestAuth from './components/testauth';
+import Hero from './pages/hero/hero';
+import Register from './pages/register/register';
+import Login from './pages/login/login';
+import SelectCategory from './pages/selectCategory/selectCategory';
+import {AuthProvider} from './context/AuthContext';
+
 
 function App() {
+  const SubmitSignUp = (e) => {
+    e.preventDefault();
+    console.log("Form Submitted");
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+      <SelectCategory />
+      </AuthProvider>
     </div>
   );
 }

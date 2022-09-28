@@ -1,0 +1,9 @@
+.redirect_to_register p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 60px;
+  text-align: center;
+}
+.redirect_to_register a {
+  color: #4185F4;
+}

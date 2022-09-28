@@ -1,0 +1,27 @@
+.tags_container {
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:16px;
+  margin-bottom: 80px;
+}
+.category_checkbox_container input {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8B8B8B;
+  background-color: #F7F4F8;
+  padding: 10px 40px;
+  border-radius: 20px;
+}
+#selectCategoryForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
