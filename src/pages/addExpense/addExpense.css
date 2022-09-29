@@ -1,0 +1,52 @@
+.form_inputcontainer {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #F7F4F8;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.form_inputcontainer .input {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+}
+.form_inputcontainer p{
+  font-weight: 500;
+  font-size: 16px;
+  }
+.form_inputcontainer label {
+  margin-right: 15px;
+  font-size: 16px;
+}
+.expenseinput {
+  width: 250px;
+  height: 66px;
+  margin: 40px auto;
+  color: #90659A;
+}
+.expenseinput input::placeholder {
+  color: #90659A;
+  font-size: 16px;
+  opacity: 0.8;
+  position: relative;
+  top: -3px;
+}
+.expenseinput input {
+  margin-left: 0;
+  font-size: 28px;
+  text-align:center;
+  color: #90659A;
+  outline: none;
+}
+
+
+
+.test {
+  display: flex;
+  justify-content: center;
+
+}

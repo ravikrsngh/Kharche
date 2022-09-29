@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding:0 20px;
+  box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px 15px 0px 0px;
+  height: 69px;
+}
+nav svg {
+  height: 23px;
+}
+.addicon {
+  position: relative;
+  top: -30px;
+  width: 55px;
+}
+.navicon {
+  position: relative;
+  top:3px;
+}
+.addicon img {
+  filter: drop-shadow(0px 10px 30px rgba(240, 135, 104, 0.45));
+}

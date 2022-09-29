@@ -1,0 +1,46 @@
+.log_container h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.35);
+  margin-bottom: 20px;
+}
+.log_record_container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.logprice {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: #41224A;
+  min-width: 80px !important;
+  white-space: nowrap;
+}
+.log_icon {
+  background-color: #F8F4F8;
+  width: 53px;
+  height: 53px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.log_icon img {
+  width: 25px;
+  height: auto;
+}
+.log_details {
+  overflow: hidden;
+  margin-left: 15px;
+  margin-right: 25px;
+}
+.log_details h5 {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.log_details p {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.35);
+}

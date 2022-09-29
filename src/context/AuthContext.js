@@ -1,6 +1,8 @@
 import {createContext, useState, useEffect } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import app from './../firebaseconfig';
+import { getAuth, updateProfile, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {auth,db} from './../firebaseconfig';
+import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
 
 const AuthContext = createContext() //creating the context
 export default AuthContext;
@@ -11,33 +13,22 @@ export default AuthContext;
 export const AuthProvider = ({children}) => {
 
   let [user, setUser] = useState(null);
-  const auth = getAuth(app);
+  let navigate = useNavigate();
 
-  const  SignUpUserWithEmailPassword = (email,password) => {
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      console.log(userCredential);
-      const signeduser = userCredential.user;
-      // ...
-      console.log(signeduser);
-      setUser(signeduser)
+  const SignUpUserWithEmailPassword = async (email,password,name) => {
+    await createUserWithEmailAndPassword(auth, email, password)
+    await updateProfile(auth.currentUser,{
+      displayName: name,
     })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      console.log(errorMessage);
-    });
+    setUser(auth.currentUser)
+    navigate(`/select-category`);
   }
 
   const SignInUserWithEmailPassword = (email,password) => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
       console.log(userCredential);
       const signeduser = userCredential.user;
-      // ...
       console.log(signeduser);
       setUser(signeduser)
     })

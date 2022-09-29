@@ -18,6 +18,11 @@
   background-color: #F7F4F8;
   padding: 10px 40px;
   border-radius: 20px;
+  transition: 0.2s;
+}
+.selected_tag {
+  background-color: #90659A;
+  color: white;
 }
 #selectCategoryForm {
   display: flex;

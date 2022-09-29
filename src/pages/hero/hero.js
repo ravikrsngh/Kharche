@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import './hero.css';
 import heroimg from './../../assets/img/heroimg.png'
 
@@ -12,8 +13,8 @@ const Hero = () => {
         <h1>Kharche</h1>
       </div>
       <div className='hero_btn_container'>
-        <button className='selected'>Register</button>
-        <button>Sign In</button>
+        <Link to="/register"><button className='selected'>Register</button></Link>
+        <Link to="/login"><button>Sign In</button></Link>
       </div>
     </div>
   )

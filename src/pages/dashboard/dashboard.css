@@ -1,0 +1,52 @@
+
+.dashboard_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.profile_info h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+.profile_info h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: -10px;
+}
+
+
+.spends_container {
+  background-color: #41224A;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 20px;
+  background-image: url(./../../assets/img/spendsgraphic.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 30%;
+  margin-bottom: 30px;
+}
+.spends_container h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #C1B5C4;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+.spends_container p {
+  color: white;
+}
+.spends_container p span {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+
+
+.dashboard_analysis {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+  opacity: 0.2;
+}

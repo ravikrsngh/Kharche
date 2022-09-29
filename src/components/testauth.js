@@ -1,5 +1,4 @@
 import {useContext,useRef} from 'react';
-
 import AuthContext from './../context/AuthContext';
 
 function TestAuth(){

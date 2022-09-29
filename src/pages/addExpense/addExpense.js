@@ -1,7 +1,11 @@
 import './addExpense.css';
+import CategoryDropdownOption from './categorydropdownoption.js';
+import CloseBtn from './../../components/closebtn/closebtn';
+import calendaricon from './../../assets/icons/calendar.png';
+import msgicon from './../../assets/icons/msg.png';
+import rsicon from './../../assets/icons/Rs.png';
 
-
-const Register = () => {
+const AddExpense = () => {
   return (
     <div className='div div2 addExpense'>
       <div className='addExpense_heading_container'>
@@ -9,14 +13,28 @@ const Register = () => {
         <p className='para_style1'>kitna kharcha kiye bhai ?</p>
       </div>
       <form className='addExpense_form' id="addExpense_form">
-        <input className="input_style1" type="text" placeholder="Name" />
-        <input className="input_style1" type="email" placeholder="Email" />
-        <input className="input_style1" type="password" placeholder="Password" />
-        <button type="submit" className='primary_btn btn btn_lg'>Register</button>
+        <div className="form_inputcontainer expenseinput">
+            <input type="text" placeholder="Your Expense (Rs.)" />
+        </div>
+        <div className="form_inputcontainer">
+          <label><img src={calendaricon}/></label>
+          <input className="input" type="text" placeholder="Date" />
+        </div>
+        <div className="form_inputcontainer">
+          <label><img src={rsicon}/></label>
+          <input className="input" type="text" placeholder="Category" />
+        </div>
+        <div className="form_inputcontainer">
+          <label><img src={msgicon}/></label>
+          <input className="input" type="text" placeholder="Note" />
+        </div>
+        <br/>
+        <button type="submit" className='primary_btn btn btn_lg'>Add</button>
       </form>
+      <CloseBtn />
     </div>
   )
 }
 
 
-export default Register;
+export default AddExpense;

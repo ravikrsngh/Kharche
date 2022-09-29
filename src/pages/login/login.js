@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import './login.css';
 import google_icon from './../../assets/icons/google_icon.png';
 
@@ -19,9 +20,9 @@ const Login = () => {
           <h4>or Sign In with Google</h4>
           <div className="line"></div>
         </div>
-        <div className="google_auth_btn_container"><button className="google_auth_btn btn btn_md"><img src={google_icon}/></button></div>
+        <div className="google_auth_btn_container"><button className="google_auth_btn btn btn_md" ><img src={google_icon}/></button></div>
       </div>
-      <div class="redirect_to_register"><p>Not a member?<a>Register Now.</a></p></div>
+      <div class="redirect_to_register"><p>Not a member?<Link to="/register"><a>Register Now.</a></Link></p></div>
     </div>
 
   )
