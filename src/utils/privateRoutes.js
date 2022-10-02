@@ -4,9 +4,9 @@ import AuthContext from './../context/AuthContext'
 
 
 
-const PrivateRoutes = () => {
+
+const PrivateRoutes = (props) => {
   let {user} = useContext(AuthContext)
-  console.log("Here");
   return (
       user ? <Outlet/> : <Navigate to='/login'/>
     )

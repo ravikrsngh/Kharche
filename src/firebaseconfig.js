@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
+//request.time < timestamp.date(2022, 10, 29);
 
 const firebaseConfig = {
   apiKey: "AIzaSyCXjVzTsy_kxdvT0TnBBcA6QLNsQcUnilM",

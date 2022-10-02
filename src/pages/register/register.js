@@ -1,20 +1,32 @@
-import {useContext,useRef} from 'react';
+import {useContext,useRef,useEffect } from 'react';
 import AuthContext from './../../context/AuthContext';
 import './register.css';
 import google_icon from './../../assets/icons/google_icon.png'
+import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
 
   let auth_ctx = useContext(AuthContext)
+
   let nameInput = useRef()
   let emailInput = useRef()
   let passwordInput = useRef()
+
+  let navigate = useNavigate();
+
 
   const onSubmitRegisterForm = (e) => {
     e.preventDefault()
     console.log("Submitting Form");
     auth_ctx.SignUpUserWithEmailPassword(emailInput.current.value,passwordInput.current.value,nameInput.current.value)
   }
+
+  useEffect(()=>{
+    if (auth_ctx.user) {
+      navigate(`/dashboard`);
+    }
+  },[])
 
 
   return (

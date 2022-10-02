@@ -13,14 +13,27 @@
   font-size: 16px;
   font-weight: 500;
   outline: none;
+  color: #8B8B8B;
 }
 .form_inputcontainer p{
   font-weight: 500;
   font-size: 16px;
+  color: #8B8B8B;
   }
 .form_inputcontainer label {
   margin-right: 15px;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.form_inputcontainer label img {
+  height: 18px;
+  width: auto;
 }
 .expenseinput {
   width: 250px;
@@ -45,8 +58,25 @@
 
 
 
-.test {
+.category_option_container {
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.category_option {
+  padding: 60px 20px;
+  padding-bottom: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  width: calc(100% - 80px);
+  max-height: 400px;
+  overflow: auto;
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
 }

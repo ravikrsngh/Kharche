@@ -4,9 +4,9 @@ const LogRecord = (props) => {
         <div className="log_icon"><img src={props.img} /></div>
         <div className="log_details">
           <h5>{props.title}</h5>
-          <p>{props.category}</p>
+          <p>{props.subTitle}</p>
         </div>
-        <div className="logprice"><p>- Rs. 2500</p></div>
+        <div className="logprice"><p>- Rs. {props.value}</p></div>
       </div>
   )
 }

@@ -1,8 +1,21 @@
+import { useEffect, useContext } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './hero.css';
-import heroimg from './../../assets/img/heroimg.png'
+import heroimg from './../../assets/img/heroimg.png';
+import AuthContext from './../../context/AuthContext';
 
 const Hero = () => {
+
+  let navigate = useNavigate();
+  let {user} = useContext(AuthContext)
+
+  useEffect(()=>{
+    if (user) {
+      navigate(`/dashboard`);
+    }
+  },[])
+
   return (
     <div className='div hero'>
       <div className = 'hero_img_container'>

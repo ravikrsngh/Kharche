@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import TestAuth from './components/testauth';
 import Loader from './components/loader/loader'
@@ -8,26 +9,28 @@ import SelectCategory from './pages/selectCategory/selectCategory';
 import {AuthProvider} from './context/AuthContext';
 import AddExpense from './pages/addExpense/addExpense';
 import Dashboard from './pages/dashboard/dashboard';
+import Profile from './pages/profile/profile';
 import PrivateRoutes from './utils/privateRoutes';
+import {auth,db} from './firebaseconfig';
+import { onAuthStateChanged } from "firebase/auth";
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-
+import Navbar from './components/navbar/navbar';
 
 function App() {
-
-  
   return (
     <BrowserRouter>
     <div className="App">
       <AuthProvider>
       <Routes>
-      <Route element={<PrivateRoutes/>}>
+      <Route element={<PrivateRoutes />}>
         <Route path="/select-category" element={<SelectCategory />} />
         <Route path="/add-expense" element={<AddExpense />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
       <Route path="/" element={<Hero />} />
       <Route path="/register" element={<Register />} />
@@ -35,6 +38,7 @@ function App() {
       </Routes>
       </AuthProvider>
     </div>
+
     <Loader display="none" />
     </BrowserRouter>
   );

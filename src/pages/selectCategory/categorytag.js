@@ -7,6 +7,13 @@ const CategoryTag = (props) => {
   const onChangeCategoryTagHandler = () => {
     if (tagSelected) {
       setTagSelected(false)
+      props.selelectthiscategory((prev)=>{
+        if (prev.indexOf(props.id) > -1) {
+          prev.splice(prev.indexOf(props.id),1)
+          console.log(prev);
+        }
+        return prev
+      })
     } else {
       setTagSelected(true)
       props.selelectthiscategory((prev)=>{
