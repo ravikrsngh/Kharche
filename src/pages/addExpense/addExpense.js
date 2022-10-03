@@ -4,7 +4,7 @@ import CloseBtn from './../../components/closebtn/closebtn';
 import calendaricon from './../../assets/icons/calendar.png';
 import msgicon from './../../assets/icons/msg.png';
 import rsicon from './../../assets/icons/Rs.png';
-
+import Loader from './../../components/loader/loader';
 import {useState, useEffect, useRef} from 'react';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { collection, getDocs, doc, addDoc } from "firebase/firestore";
@@ -20,6 +20,7 @@ const AddExpense = () => {
   let navigate = useNavigate();
 
   let [categoryOptionDisplay, setcategoryOptionDisplay] = useState("none")
+  let [loaderDisplay,setloaderDisplay] = useState("none")
 
   let [categorySelected, setcategorySelected] = useState({
     icon:"https://firebasestorage.googleapis.com/v0/b/kharche-173f7.appspot.com/o/Category%2Frupee.png?alt=media&token=a6d25b47-ca98-48fa-85fa-fc3f22010972",
@@ -41,8 +42,7 @@ const AddExpense = () => {
 
   const addNewExpense = async (e) => {
     e.preventDefault()
-    console.log("Form Data");
-
+    setloaderDisplay("flex")
     let d = dateRef.current.value
     d = d.split("-")
     let formData ={
@@ -56,9 +56,7 @@ const AddExpense = () => {
       category:categorySelected,
       note:noteRef.current.value
     }
-    console.log(formData);
     let isnum = /^[0-9]+$/.test(formData.expense);
-    console.log(isnum);
     if (!isnum ) {
       alert("Expense should only contain digits.")
       return
@@ -69,7 +67,7 @@ const AddExpense = () => {
     }
     let dref = doc(db, "UserCategory", formData.category.value)
     let docRef = await addDoc(collection(db, "Expenses"),{...formData,expense:parseInt(expenseRef.current.value)});
-    console.log(docRef);
+    setloaderDisplay("none")
     navigate('/dashboard')
   }
 
@@ -113,6 +111,7 @@ const AddExpense = () => {
         <button type="submit" className='primary_btn btn btn_lg'>Add</button>
       </form>
       <Link to='/dashboard'><CloseBtn /></Link>
+      <Loader display={loaderDisplay} label="Adding expense..."/>
     </div>
   )
 }

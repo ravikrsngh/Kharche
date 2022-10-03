@@ -7,7 +7,8 @@ import Navbar from './../../components/navbar/navbar';
 import { collection, getDocs, doc, query, where, deleteDoc } from "firebase/firestore";
 import {useState, useContext, useEffect} from 'react';
 import AuthContext from './../../context/AuthContext';
-import {auth,db} from './../../firebaseconfig.js'
+import {auth,db} from './../../firebaseconfig.js';
+import Loader from './../../components/loader/loader';
 
 const Dashboard = () => {
 
@@ -16,6 +17,7 @@ const Dashboard = () => {
 
   let [allExpenses, setallExpenses] = useState([])
   let [currentMonthExpense, setcurrentMonthExpense] = useState(0)
+  let [loaderDisplay,setloaderDisplay] = useState("none")
 
   const getPreviousDates = (d) => {
     let today = new Date();
@@ -50,6 +52,7 @@ const Dashboard = () => {
   const fetchAllExpenses = async () => {
 
     // Fetching total expense of current month
+    setloaderDisplay("flex")
     let currentMonth = getPreviousDates(0).split("-");
     let q = query(
       collection(db, "Expenses"),
@@ -62,7 +65,7 @@ const Dashboard = () => {
     querySnapshot.forEach((d) => {
       totalExpense += d.data().expense
     })
-    setcurrentMonthExpense(totalExpense)
+
 
     // Getting records for last 4 days
     let allLogs = []
@@ -87,7 +90,10 @@ const Dashboard = () => {
       }
       allLogs.push(<Logs title={logtitle} logrecords={logrecords} />)
     }
+
+    setcurrentMonthExpense(totalExpense)
     setallExpenses(allLogs)
+    setloaderDisplay("none")
   }
 
 
@@ -118,6 +124,7 @@ const Dashboard = () => {
       <br />
       <br />
       <Navbar iconColors={['#41224A','#B9B9B9','#B9B9B9','#B9B9B9']} />
+      <Loader display={loaderDisplay} label="Fetching all expenses..."/>
     </div>
   );
 }

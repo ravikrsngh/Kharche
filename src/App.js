@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import TestAuth from './components/testauth';
-import Loader from './components/loader/loader'
 import Hero from './pages/hero/hero';
 import Register from './pages/register/register';
 import Login from './pages/login/login';
@@ -39,7 +38,6 @@ function App() {
       </AuthProvider>
     </div>
 
-    <Loader display="none" />
     </BrowserRouter>
   );
 }
