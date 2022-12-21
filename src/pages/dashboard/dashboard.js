@@ -67,9 +67,9 @@ const Dashboard = () => {
     })
 
 
-    // Getting records for last 4 days
+    // Getting records for last 10 days
     let allLogs = []
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 10; i++) {
       let newdate = getPreviousDates(i).split("-");
       let logtitle = formatDate(newdate)
       let q = query(

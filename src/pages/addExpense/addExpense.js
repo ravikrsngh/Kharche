@@ -68,7 +68,6 @@ const AddExpense = () => {
     let dref = doc(db, "UserCategory", formData.category.value)
     let docRef = await addDoc(collection(db, "Expenses"),{...formData,expense:parseInt(expenseRef.current.value)});
     setloaderDisplay("none")
-    navigate('/dashboard')
   }
 
 
