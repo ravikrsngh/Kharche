@@ -1,0 +1,56 @@
+.analytics_header {
+  margin-bottom: 20px;
+}
+.analytics_header h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.analytics_header p {
+  font-size: 12px;
+}
+
+
+#analytics_form  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+#analytics_form .analytics_filter_element {
+  flex:0 0 calc(50% - 8px);
+  position: relative;
+}
+#analytics_form .analytics_main_filter_element {
+  flex: 0 0 100%;
+}
+#analytics_form .analytics_filter_element input {
+  background-color: #F7F4F8;
+  padding: 12px 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.dropdown_options_container {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  border-radius: 10px;
+  background: white;
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+  z-index: 5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.dropdown_options {
+  background-color: #F7F4F8;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.dropdown_options span {
+  font-size: 12px;
+}

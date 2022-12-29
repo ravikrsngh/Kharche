@@ -1,7 +1,7 @@
 import './selectCategory.css'
 import CategoryTag from './categorytag.js'
 import {useState} from 'react';
-import { collection, addDoc, doc, deleteDoc, getDocs } from "firebase/firestore";
+// import { collection, addDoc, doc, deleteDoc, getDocs } from "firebase/firestore";
 import {auth,db} from './../../firebaseconfig.js'
 
 const SelectCategory = () => {
